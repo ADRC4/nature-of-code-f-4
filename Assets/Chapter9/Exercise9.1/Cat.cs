@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cat : MonoBehaviour {
 
     GUIStyle style;
-    string[] characters;
+    char[] characters;
     string tobecat;
     string count;
     
@@ -26,7 +26,12 @@ public class Cat : MonoBehaviour {
 
         counts = 0;
 
-        characters = new string[]{"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "};
+        characters = new char[27];
+	for (int i = 0; i < 26; i++)
+        {
+            characters[i] = (char)(97 + i);
+        }
+        characters[26]=(char)20;
         
         do
         {
