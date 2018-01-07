@@ -25,15 +25,6 @@ public class NewBehaviourScript1 : MonoBehaviour {
 		times = 5f;
 	}
 
-//	void OnCollisionEnter2D(Collision2D hit)
-//	{
-//		if (hit.gameObject.name == "Top")
-//		{
-//			rb.AddForce(-(flotage + gravity)*1.5f* (times/5f) * transform.up , ForceMode2D.Impulse);
-//			times--;
-//		}
-//	}
-
 	void Update(){
 
 //		
@@ -52,7 +43,6 @@ public class NewBehaviourScript1 : MonoBehaviour {
 		if (rb.position.y < -9.25 && rb.velocity.y < 0) {
 			//bottom edge
 			rb.AddForce(-(rb.velocity.y*rb.mass*1.5f) * transform.up , ForceMode2D.Impulse);
-
 		}
 		if (rb.position.y > 9.25 && rb.velocity.y > 0 ) {
 			//top edge
@@ -63,13 +53,6 @@ public class NewBehaviourScript1 : MonoBehaviour {
 			}
 
 		}
-
-
-//		if (Input.GetMouseButtonDown(0))
-//		{
-//			wind = 0.5f;
-//		}
-//		obj.transform.Translate(Vector3.right * Time.deltaTime);
 	}
 	void OnGUI()
 	{
