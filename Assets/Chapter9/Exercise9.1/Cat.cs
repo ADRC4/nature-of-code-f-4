@@ -17,6 +17,9 @@ public class Cat : MonoBehaviour {
    
     float timer;
     int timertoshow;
+    public Text text;
+    public Text cat;
+    public Text alltext;
 
     // Use this for initialization
 	void Start ()
@@ -33,7 +36,7 @@ public class Cat : MonoBehaviour {
         }
         characters[26]=(char)20;
         
-        do
+        /*do
         {
             
             firstcharacter = Random.Range(0, characters.Length -1);
@@ -48,22 +51,41 @@ public class Cat : MonoBehaviour {
         } while (firstcharacter != 2||secondcharacter!=0||thirdcharacter!=19);
         timertoshow = Mathf.CeilToInt(timer);
 
-        count = string.Format(" 'cat'\nCounting Times:{0}\nTime:{1}",counts,timertoshow);
+        count = string.Format(" 'cat'\nCounting Times:{0}\nTime:{1}",counts,timertoshow);*/
 
     }
     
 
-   private void OnGUI()
+    /*private void OnGUI()
     {
          GUI.Label(new Rect(40, 40, 200, 50), count,style);
         
         
-       /* if (GUI.skin.customStyles.Length > 0)
-            GUI.skin.customStyles[0].wordWrap = true;*/
+       if (GUI.skin.customStyles.Length > 0)
+            GUI.skin.customStyles[0].wordWrap = true;
        
-    }
+    }*/
     // Update is called once per frame
-    void Update () {
+    void Update () 
+    {
+	    if(firstcharacter != 2 || secondcharacter != 0 || thirdcharacter != 19)
+        {
+            firstcharacter = Random.Range(0, characters.Length - 1);
+            secondcharacter = Random.Range(0, characters.Length - 1);
+            thirdcharacter = Random.Range(0, characters.Length - 1);
+            tobecat = string.Format("{0}{1}{2}", characters[firstcharacter], characters[secondcharacter], characters[thirdcharacter]);
+            Debug.Log(tobecat);
+            counts += 1;
+            cat.text = tobecat;
+            alltext.text = tobecat + "\n"+alltext.text;
+            timer += Time.deltaTime;
+        }
+
+        timertoshow = Mathf.CeilToInt(timer);
+
+        count = string.Format(" Counting Times:{0}\nTime:{1}", counts, timertoshow);
+        text.text = count;
+
 
         
 	}
