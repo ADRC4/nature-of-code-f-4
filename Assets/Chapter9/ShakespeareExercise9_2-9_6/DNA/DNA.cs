@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DNA 
+public class DNAchar 
 {
     
     // The genetic sequence
@@ -12,7 +12,7 @@ public class DNA
     public float fitness1;
 
     // Constructor (makes a random DNA)
-    public DNA(int num)
+    public DNAchar(int num)
     {
         genes = new char[num];
         for (int i = 0; i < genes.Length; i++)
@@ -60,10 +60,10 @@ public class DNA
     }
 
     // Crossover
-    public DNA crossover(DNA partner)
+    public DNAchar crossover(DNAchar partner)
     {
         // A new child
-        DNA child = new DNA(genes.Length);
+        DNAchar child = new DNAchar(genes.Length);
 
         int midpoint = (int)(Random.Range(0,genes.Length)); // Pick a midpoint
 

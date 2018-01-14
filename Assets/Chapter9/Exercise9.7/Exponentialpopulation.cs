@@ -6,8 +6,8 @@ using UnityEngine;
 public class Exponentialpopulation
 {
     float mutationRate;           // Mutation rate
-    DNA[] population;             // Array to hold the current population
-    List<DNA> matingPool;    // ArrayList which we will use for our "mating pool"
+    DNAchar[] population;             // Array to hold the current population
+    List<DNAchar> matingPool;    // ArrayList which we will use for our "mating pool"
     string target;                // Target phrase
     int generations;              // Number of generations
     public bool finished ;             // Are we finished evolving?
@@ -17,13 +17,13 @@ public class Exponentialpopulation
     {
         target = p;
         mutationRate = m;
-        population = new DNA[num];
+        population = new DNAchar[num];
         for (int i = 0; i < population.Length; i++)
         {
-            population[i] = new DNA(target.Length);
+            population[i] = new DNAchar(target.Length);
         }
         calcFitness();
-        matingPool = new List<DNA>();
+        matingPool = new List<DNAchar>();
         finished = false;
         generations = 0;
 
@@ -80,9 +80,9 @@ public class Exponentialpopulation
                 b = b + (b > 0.5 * matingPool.Count ? -1 : 1);
 
 
-            DNA partnerA = matingPool[a];
-            DNA partnerB = matingPool[b];
-            DNA child = partnerA.crossover(partnerB);
+            DNAchar partnerA = matingPool[a];
+            DNAchar partnerB = matingPool[b];
+            DNAchar child = partnerA.crossover(partnerB);
             child.mutate(mutationRate);
             population[i] = child;
         }

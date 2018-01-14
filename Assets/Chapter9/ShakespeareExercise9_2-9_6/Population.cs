@@ -8,8 +8,8 @@ public class Population
 {
 
   float mutationRate;           // Mutation rate
-    DNA [] population;             // Array to hold the current population
-    List<DNA> matingPool;    // ArrayList which we will use for our "mating pool"
+    DNAchar [] population;             // Array to hold the current population
+    List<DNAchar> matingPool;    // ArrayList which we will use for our "mating pool"
     string target;                // Target phrase
   int generations;              // Number of generations
     bool finished = true;             // Are we finished evolving?
@@ -18,13 +18,13 @@ public class Population
    public Population(string p, float m, int num) {
         target = p;
         mutationRate = m;
-        population = new DNA[num];
+        population = new DNAchar[num];
         for (int i = 0; i < population.Length; i++)
         {
-            population[i] = new DNA(target.Length);
+            population[i] = new DNAchar(target.Length);
         }
         calcFitness();
-        matingPool = new List<DNA>();
+        matingPool = new List<DNAchar>();
         finished = false;
         generations = 0;
 
@@ -71,14 +71,14 @@ public class Population
         }*/
 
         //list from max to min(1,2,3,4,5,6)
-        List<DNA> listfitness1 = new List<DNA>();
-        List<DNA> finalfitness = new List<DNA>();
+        List<DNAchar> listfitness1 = new List<DNAchar>();
+        List<DNAchar> finalfitness = new List<DNAchar>();
         for (int c = 0; c < population.Length; c++)
         {
             listfitness1.Add(population[c]);
         }
         var newlist = listfitness1.OrderBy(t => t.fitness);
-        foreach(DNA pop in newlist)
+        foreach(DNAchar pop in newlist)
         {
             finalfitness.Add(pop);
         }
@@ -101,9 +101,9 @@ public class Population
         {
             int a = (int)(Random.Range(0, matingPool.Count));
             int b = (int)(Random.Range(0, matingPool.Count));
-            DNA partnerA = matingPool[a];
-            DNA partnerB = matingPool[b];
-            DNA child = partnerA.crossover(partnerB);
+            DNAchar partnerA = matingPool[a];
+            DNAchar partnerB = matingPool[b];
+            DNAchar child = partnerA.crossover(partnerB);
             child.mutate(mutationRate);
             population[i] = child;
         }
