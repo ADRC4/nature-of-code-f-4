@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Exponentialfit : MonoBehaviour {
 
-    //PFont f;
-   // public GUISkin skin;
+   //DNAchar Script in Exercise9.3 folder
 
     string target;
     int popmax;
