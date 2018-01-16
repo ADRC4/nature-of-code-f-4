@@ -35,7 +35,7 @@ public class Face
         x = x_;
         y = y_;
         fitness = 1;
-        // Using java.awt.Rectangle
+        
         r = new Rect((int)(x - wh / 2), (int)(y - wh / 2), (int)(wh), (int)(wh));
     }
 
@@ -64,9 +64,7 @@ public class Face
         float mouthh = dna.genes[5]*10;
 
         // Once we calculate all the above properties, we use those variables to draw rects, ellipses, etc.
-        //pushMatrix();
-        //translate(x, y);
-        //noStroke();
+        
 
         // Draw the head
         //head = Instantiate(sphere, new Vector3(0,0,0), Quaternion.identity);
@@ -76,9 +74,7 @@ public class Face
         head.GetComponent<Renderer>().material.color = c;
         head.transform.localScale = new Vector3(r, r, r);
 
-        //fill(c);
-        //ellipseMode(CENTER);
-        //ellipse(0, 0, r, r);
+        
 
         // Draw the eyes
         eye1 = GameObject.Find(e1);
@@ -95,29 +91,24 @@ public class Face
         eye2.GetComponent<Renderer>().material.color = eyecolor;
         eye2.transform.localScale = new Vector3(eye_size, eye_size, eye_size);
 
-        // fill(eyecolor);
-        //rectMode(CENTER);
-        //rect(-eye_x, -eye_y, eye_size, eye_size);
-        //rect(eye_x, -eye_y, eye_size, eye_size);
+        
 
 
         // Draw the mouth
         mouth = GameObject.Find(mou);
-        //mouth = GameObject.Find("mouth0");
+        
 
         mouth.transform.position = new Vector3(mouth_x, mouth_y-8, 0);
         mouth.GetComponent<Renderer>().material.color = mouthColor;
         mouth.transform.localScale = new Vector3(mouthw, mouthh,0);
 
-        //fill(mouthColor);
-        //rectMode(CENTER);
-        //rect(mouth_x, mouth_y, mouthw, mouthh);
+        
 
         // Draw the bounding box
         //stroke(0.25);
        
         boundingbox = GameObject.Find(bou);
-        //boundingbox = GameObject.Find("boundingbox0");
+        
         boundingbox.transform.position = new Vector3(0, 0, 0);
 
         boundingbox.transform.localScale = new Vector3(wh+5, wh+5, wh+5);
@@ -137,22 +128,19 @@ public class Face
 
 
 
-        //rectMode(CENTER);
-        //rect(0, 0, wh, wh);
-        //popMatrix();
+        
 
-        // Display fitness value
-        //textAlign(CENTER);
+        
         words = GameObject.Find(counts);
        fitnessvalue = words.GetComponent<Text>();
         if (rolloverOn)
-            //fill(0);
+            
             fitnessvalue.color = Color.black;
         else
             fitnessvalue.color = Color.gray;
         fitnessvalue.transform.position = new Vector2(x+450, y + 55);
         fitnessvalue.text = fitness.ToString("F0");
-        //text(int(fitness), x, y + 55);*/
+       
     }
 
     public float getFitness()

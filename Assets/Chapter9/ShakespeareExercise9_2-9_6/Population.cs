@@ -46,7 +46,7 @@ public class Population
         // Clear the ArrayList
         matingPool.Clear();
 
-       /* float maxFitness = 0;
+        float maxFitness = 0;
         for (int i = 0; i < population.Length; i++)
         {
             if (population[i].fitness > maxFitness)
@@ -68,9 +68,9 @@ public class Population
             {              // and pick two random numbers
                 matingPool.Add(population[i]);
             }
-        }*/
+        }
 
-        //list from max to min(1,2,3,4,5,6)
+        /*//list from max to min(1,2,3,4,5,6)
         List<DNAchar> listfitness1 = new List<DNAchar>();
         List<DNAchar> finalfitness = new List<DNAchar>();
         for (int c = 0; c < population.Length; c++)
@@ -90,7 +90,7 @@ public class Population
             {
                 matingPool.Add(finalfitness[v]);
             }
-        }
+        }*/
     }
 
   // Create a new generation
