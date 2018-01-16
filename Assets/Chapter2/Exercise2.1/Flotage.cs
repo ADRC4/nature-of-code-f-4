@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,8 +30,21 @@ public class Flotage : MonoBehaviour
 
 
         rb.AddForce(transform.up * (flotage + gravity), ForceMode2D.Force);
-        obj.transform.Translate(Vector3.right *wind* Time.deltaTime);
+        obj.transform.Translate(Vector3.right * wind * Time.deltaTime);
+        if (rb.position.y > 4.5 && rb.velocity.y > 0)
+        {
+            //top edge
+            if (rb.velocity.y * rb.mass * 1.5f < (flotage + gravity) * 0.05f)
+            {
+                rb.AddForce(-(flotage + gravity) * (0.05f) * transform.up, ForceMode2D.Impulse);
+            }
+            else
+            {
+                rb.AddForce(-(rb.velocity.y * rb.mass * 1.5f) * transform.up, ForceMode2D.Impulse);
+            }
 
-
+        }
     }
 }
+   
+    

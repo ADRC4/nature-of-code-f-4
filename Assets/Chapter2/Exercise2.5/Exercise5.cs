@@ -14,7 +14,7 @@ public class Exercise5 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        gravity = 500.0f;
+        gravity = 300.0f;
         c = 1f;
         rb.AddForce(transform.up * -gravity, ForceMode2D.Force);
 
