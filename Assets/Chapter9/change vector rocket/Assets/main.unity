@@ -164,7 +164,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &198571066
 Transform:
@@ -203,10 +203,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1194105242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3812d9782e26fde4b8a6e548428b15c3, type: 3}
+  m_Script: {fileID: 11500000, guid: a0b45a86ded0fc440b6a1c834a1cb6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 1147024504216606, guid: 3557b4bedc6b25146b548e6f864b5a22,
+  creaturePrefab: {fileID: 1147024504216606, guid: 57a60463c7505ff4aa1fb558282a7baf,
     type: 2}
   populationSize: 200
   genomeLenght: 100
@@ -284,7 +284,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1759574806
 Transform:
